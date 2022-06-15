@@ -1,0 +1,420 @@
+@import "constant";
+
+header{
+	background-color: $fon_color_one;
+	min-height: 100vh;
+	.container{
+		overflow: hidden;
+		.menu{
+			margin-top: 38px;
+			.col-1{
+				min-width: 31px;
+				min-height: 25px;
+				a{
+					display: block;
+					min-height: 100%;
+					min-width: 100%;
+					background-image: url("../img/logo.svg");
+					background-repeat: no-repeat;
+					background-position: top left;
+					background-size: auto 100%;
+				}
+				#media_menu{
+					display: none;
+				}
+				@media screen and (max-width: 767px){
+					a{
+						display: none;
+					}
+					#media_menu{
+						display: flex;
+						justify-content: flex-end;
+						width: 100vw;
+						position: fixed;
+						top: 0px;
+						left: 0px;
+						padding: 10px 20px;
+						z-index: 999;
+						background-color: $fon_color_two;
+					}
+				}
+			}
+			.col-11{
+				@extend .text_Montserrat;
+				a{
+					text-decoration: none;
+					text-transform: uppercase;
+					font-size: 12px;
+					color: #191919;
+					transition: all linear 300ms;
+					&:hover{
+						color: #10c9c3;
+					}
+				}
+				@media screen and (max-width: 767px){
+					display: block;
+					position: fixed;
+					left: -300px;
+					top: 0px;
+					z-index: 999;
+					.row{
+						display: flex;
+						flex-direction: column;
+						width: 300px;
+						background-color: $fon_color_one;
+						a{
+							background-color: $fon_color_three;
+							margin: 5px;
+							padding: 5px;
+						}
+					}
+				}
+			}
+		}
+		.first_title{
+			min-height: 100vh;
+			h1{
+				@extend .text_Montserrat;
+				font-size: 38px;
+			}
+			p{
+				@extend .text_Nunito_SansRegual;
+				margin-top: 40px; 
+				margin-bottom: 40px;
+			}
+			button{
+				margin-bottom: 20px;
+			}
+			@media screen and(max-width: 767px){
+				text-align: center;
+			}
+		}
+	}
+}
+
+.about_us{
+	margin: 20px 0px;
+	.row{
+		@extend .height;
+		.col-md-auto{
+			min-height: 100vh*420px/768px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			p{
+				@extend .text_Nunito_SansRegual;
+				font-size: 18px;
+				margin-top: 40px; 
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+.work_process{
+	@extend .about_us;
+	height: 100vh*260px/768px;
+}
+
+.prof_skils{
+	background: linear-gradient(to right, rgba(248,249,249,1) 0%, rgba(248,249,249,1) 50%, rgba(233,233,233,1) 50%, rgba(233,233,233,1) 100%);
+		@media screen and (max-width: 767px){
+			background: none;
+			background-color: $fon_color_one;
+			padding: 10px 0px;
+		}
+		.container{
+			.col-md-6{
+				min-height: 100vh*570px/768px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.prof_skils_line{
+					display: block;
+					height: 3px;
+					width: 90%;
+				}
+				.line_one{
+					background: linear-gradient(to right, rgba(16,201,195,1) 0%, rgba(16,201,195,1) 75%, rgba(216,216,216,1) 75%, rgba(216,216,216,1) 100%);
+				}
+				.line_two{
+					background: linear-gradient(to right, rgba(16,201,195,1) 0%, rgba(16,201,195,1) 90%, rgba(216,216,216,1) 90%, rgba(216,216,216,1) 100%);
+				}
+				.line_tree{
+					background: linear-gradient(to right, rgba(16,201,195,1) 0%, rgba(16,201,195,1) 65%, rgba(216,216,216,1) 65%, rgba(216,216,216,1) 100%);
+				}
+				h2{
+					@media screen and (max-width: 767px){
+						text-align: center;
+					}
+				}
+				p{
+					@extend .text_Montserrat;
+					text-transform: uppercase;
+					@media screen and (max-width: 767px){
+						text-align: center;
+					}
+				}
+			}
+		}
+}
+.static{
+	background-color: $fon_color_two;
+	.container{
+		.row{
+			.col-md-3{
+				min-height: 100vh*240px/768px;
+				color: $fon_color_white;
+				@media screen and (max-width: 1200px){
+					min-height: 20vh;
+				}
+					.static_number{
+						@extend .text_Montserrat;
+						font-size: 18px;
+						font-weight: 100;
+						margin: 10px 0px;
+					}
+					.static_text{
+						@extend .text_Montserrat;
+						text-transform: uppercase;
+						font-weight: 100;
+					}
+				.row{
+					@extend .height;
+						@media screen and (max-width: 1200px){
+							align-items: center;
+							flex-direction: column;
+							justify-content: center;
+						}
+					.col-md-auto{
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						@media screen and (max-width: 1200px){
+							text-align: center;
+							width: 100%;
+							justify-content: center;
+						}
+					}
+				}
+			}	
+		}
+	}
+}
+.mini_gal{
+	@extend .no-padding;
+	.col-sm-3{
+		@extend .no-padding;
+    	background: #838383;
+    	height: 100vh*300px/768px;
+    	transition: all linear 300ms;
+    	&:hover{
+    		background: rgba(37, 37, 37, 0.8);
+    		cursor: pointer;
+    	}
+	}
+	.mini_gal_white{
+		background: #dddddd;
+	}
+	.mini_gal_toggle{
+		display: none;
+	}
+	.mini_gal_toggle_button{
+		height: 100vh*100px/768px;
+		background-color: $fon_color_three;
+		cursor: pointer;
+		p{
+			@extend .text_Montserrat;
+			text-align: center;
+			transition: all linear 300ms;
+			text-transform: uppercase;
+			color: #8e8e8e;
+
+		}
+		&:hover{
+			p{
+				color: $fon_color_two;
+			}
+		}
+	}
+}
+.big_gal{
+	height: 100vh*675px/768px;
+	.container{
+		.col-12{
+			height: 100vh*570px/768px;
+			background-color: $fon_color_three;
+		}
+	}
+}
+.icons_block{
+	background-color: $fon_color_three;
+	.row{
+		padding: 100px 0px;
+		@media screen and (max-width: 767px){
+			padding: 50px 0px;
+		}
+		.col-md-3{
+			min-height: 100vh*(535px/2)/768px;
+			text-align: center;
+			@media screen and (max-width: 767px){
+				min-height: 20vh;
+			}
+			.icons_block_text_first{
+				@extend .text_Montserrat;
+				text-transform: uppercase;
+			}
+			.icons_block_text_second{
+				@extend .text_Nunito_SansRegual;
+				font-size: 16px;		
+			}
+		}
+	}
+
+}
+.big_carusel{
+	min-height: 100vh*500px/768px;
+	background-color: $fon_color_two;
+	.container{
+		.owl-carousel{
+			margin-top:180px;
+			.item{
+				text-align: center;
+				.big_carusel_item_text_first{
+					@extend .text_Montserrat;
+					font-size: 24px;
+					color: $fon_color_white;
+				}
+				.big_carusel_item_text_two{
+					@extend .text_Montserrat;
+					color: $fon_color_white;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+.icons_block_two{
+	.container{
+		height: 100vh*200px/768px;
+		background-image: url("../img/logos.svg");
+		background-repeat: no-repeat;
+		background-position: 15% 50%;
+		background-size: 97%;
+	}
+}
+.form_block{
+	min-height: 100vh*750px/768px;
+	background-color: $fon_color_three;
+	.container{
+		padding-top: 100px;
+		padding-bottom: 100px;
+		@media screen and (max-width: 767px) {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.row{
+			.col-md-7{
+				text-align: center;
+				.form_block_text_first{
+					@extend .text_Nunito_SansRegual;
+					font-size: 16px;
+				}
+			}
+		}
+		form{
+			.col-md-6{
+				margin-top: 20px;
+				input{
+					width: 100%;
+					border: none;
+					outline: none;
+					padding: 20px;
+				}
+			}
+			.col-md-12{
+				input{
+					width: 100%;
+					border: none;
+					outline: none;
+					padding: 20px;
+				}
+				textarea{
+					width: 100%;
+					height: 170px;
+					border: none;
+					outline: none;
+					padding: 20px;	
+					resize: none;
+				}
+			}
+			button{
+				margin-top: 30px;
+			}
+		}
+	}
+}
+footer{
+	min-height: 100vh*285px/768px;
+	background-color: #141414;
+	.container{
+		@extend .height;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		@media screen and (max-width: 767px) {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.row{
+			@extend .height;
+			.col-md-5{
+				color: $color_footer;
+				@media screen and (max-width: 767px) {
+					text-align: center;
+				}
+				h4{
+					@extend .text_Montserrat;
+					font-size: 18px;
+					color: $fon_color_white;
+				}
+				p{
+					@extend .text_Nunito_SansRegual;
+					font-size: 15px;
+					color: $color_footer;
+				}
+			}
+			.col-md-7{
+				.col-sm-4{
+					color: $color_footer;
+					p{
+						@extend .text_Nunito_SansRegual;
+						font-size: 15px;
+						color: $color_footer;
+						@media screen and (max-width: 575px) {
+							text-align: center;
+						}
+					}
+				}
+				.col-sm-2{
+					a{
+						text-decoration: none;
+						color: $color_footer;
+						transition: all linear 300ms;
+						@extend .text_Nunito_SansRegual;
+						font-size: 15px;
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+					@media screen and (max-width: 575.98px){
+						display: flex;
+						flex-direction: column;
+						max-width: 30%;
+						flex-wrap: nowrap;
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+	}
+}
